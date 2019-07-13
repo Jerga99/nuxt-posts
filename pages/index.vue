@@ -11,8 +11,14 @@
                   <h1>Newest Posts</h1>
                   <hr>
                 </div>
-                <post-item />
-                <post-item />
+                <post-item
+                  :title="title"
+                  :subtitle="'New Post Subtitle'"
+                />
+                <post-item
+                  :title="'New Post Title 2'"
+                  :subtitle="'New Post Subtitle 2'"
+                />
               </div>
             </div>
           </div>
@@ -28,6 +34,11 @@ import PostItem from '~/components/PostItem'
 export default {
   components: {
     Navbar, PostItem
+  },
+  data() {
+    return {
+      title: 'My Title From Page'
+    }
   }
 }
 </script>
