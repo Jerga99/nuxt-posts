@@ -12,12 +12,10 @@
                   <hr>
                 </div>
                 <post-item
-                  :title="title"
-                  :subtitle="'New Post Subtitle'"
-                />
-                <post-item
-                  :title="'New Post Title 2'"
-                  :subtitle="'New Post Subtitle 2'"
+                  v-for="post in posts"
+                  :key="post._id"
+                  :title="post.title"
+                  :subtitle="post.subtitle"
                 />
               </div>
             </div>
@@ -37,7 +35,19 @@ export default {
   },
   data() {
     return {
-      title: 'My Title From Page'
+      title: 'My Title From Page',
+      posts: [
+        {
+          _id: '1',
+          title: 'My First Post',
+          subtitle: 'My First Subtitle'
+        },
+        {
+          _id: '2',
+          title: 'My Second Post',
+          subtitle: 'My Second Subtitle'
+        }
+      ]
     }
   }
 }
