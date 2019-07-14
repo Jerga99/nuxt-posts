@@ -45,29 +45,31 @@ export default {
 }
 </script>
 
-<style scoped>
-  .post-footer {
-    font-style: italic;
-  }
-
+<style scoped lang="scss">
   .post {
     margin-bottom: 20px;
     padding: 5px;
     border-bottom: 2px solid transparent;
     display: flex;
     flex-direction: row;
-  }
-  .post-content {
-    flex: 1;
-  }
-  .post-right {
-    float: right;
-    justify-content: flex-end;
-    align-self: center;
-  }
 
-  .post:hover {
-    border-bottom: 2px solid #e8e8e8;
+    &-footer {
+      font-style: italic;
+    }
+
+    &-content {
+      flex: 1;
+    }
+
+    &-right {
+      float: right;
+      justify-content: flex-end;
+      align-self: center;
+    }
+
+    &:hover {
+      border-bottom: 2px solid #e8e8e8;
+    }
   }
 </style>
 
