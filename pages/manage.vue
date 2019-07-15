@@ -16,7 +16,11 @@
         </aside>
         <div class="column is-4 messages hero is-fullheight" id="message-feed">
           <div class="inbox-messages" id="inbox-messages">
-            <div class="card">
+            <!-- card Starts -->
+            <div
+              v-for="post in posts"
+              :key="post._id"
+              class="card">
               <div class="card-content">
                 <div class="msg-header">
                   <span class="msg-from"><small>From Filip Jerga</small></span>
@@ -24,28 +28,14 @@
                   <span class="msg-attachment"><i class="fa fa-paperclip"></i></span>
                 </div>
                 <div class="msg-subject">
-                  <span class="msg-subject"><strong id="fake-subject-1">Some Title</strong></span>
+                  <span class="msg-subject"><strong id="fake-subject-1">{{post.title}}</strong></span>
                 </div>
                 <div class="msg-snippet">
-                  <p id="fake-snippet-1">Some Subtitle</p>
+                  <p id="fake-snippet-1">{{post.subtitle}}</p>
                 </div>
               </div>
             </div>
-            <div class="card">
-              <div class="card-content">
-                <div class="msg-header">
-                  <span class="msg-from"><small>From Filip Jerga </small></span>
-                  <span class="msg-timestamp"></span>
-                  <span class="msg-attachment"><i class="fa fa-paperclip"></i></span>
-                </div>
-                <div class="msg-subject">
-                  <span class="msg-subject"><strong id="fake-subject-1">Some Title 2</strong></span>
-                </div>
-                <div class="msg-snippet">
-                  <p id="fake-snippet-1">Some Subtitle 2</p>
-                </div>
-              </div>
-            </div>
+            <!-- card Starts -->
           </div>
         </div>
         <div class="column is-6 message hero is-fullheight is-hidden" id="message-pane">
@@ -85,9 +75,15 @@
 </template>
 <script>
 import Navbar from '~/components/Navbar'
+import { mapState } from 'vuex'
 export default {
   components: {
     Navbar
+  },
+  computed: {
+    ...mapState({
+      posts: (state) => state.posts
+    })
   }
 }
 </script>

@@ -37,11 +37,23 @@ export default {
   },
   data() {
     return {
-      title: 'My Title From Page',
-      posts: this.$store.state.posts
+      title: 'My Title From Page'
+    }
+  },
+  computed: {
+    posts() {
+      return this.$store.state.posts
     }
   }
 }
 </script>
 <style scoped>
 </style>
+
+
+
+
+
+
+
+
