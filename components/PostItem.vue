@@ -15,7 +15,7 @@
     </div>
     <div class="post-right">
       <label class="checkbox">
-        <input type="checkbox">
+        <input type="checkbox" :checked="isRead">
         Read
       </label>
     </div>
@@ -38,9 +38,11 @@ export default {
       type: Date,
       required: false,
       default: new Date()
+    },
+    isRead: {
+      type: Boolean,
+      required: false
     }
-  },
-  methods: {
   }
 }
 </script>

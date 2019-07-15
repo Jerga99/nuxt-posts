@@ -17,6 +17,7 @@
                   :title="post.title"
                   :subtitle="post.subtitle"
                   :date="post.createdAt"
+                  :isRead="post.isRead"
                 />
               </div>
             </div>
@@ -37,20 +38,7 @@ export default {
   data() {
     return {
       title: 'My Title From Page',
-      posts: [
-        {
-          _id: '1',
-          title: 'My First Post',
-          subtitle: 'My First Subtitle',
-          createdAt: new Date()
-        },
-        {
-          _id: '2',
-          title: 'My Second Post',
-          subtitle: 'My Second Subtitle',
-          createdAt: new Date()
-        }
-      ]
+      posts: this.$store.state.posts
     }
   }
 }
