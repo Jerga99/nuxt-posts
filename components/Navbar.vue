@@ -28,19 +28,15 @@
             Menu
             </a>
             <div class="navbar-dropdown">
-              <a class="navbar-item">
-              Dashboard
-              </a>
-              <a class="navbar-item">
-              Profile
-              </a>
-              <a class="navbar-item">
-              Settings
-              </a>
-              <hr class="navbar-divider">
-              <div class="navbar-item">
-                Logout
-              </div>
+              <nuxt-link to="/" class="navbar-item">
+              Home
+              </nuxt-link>
+              <!-- <div @click="navigateTo('/manage')" class="navbar-item">
+              Manage
+              </div> -->
+              <nuxt-link to="/manage" class="navbar-item">
+              Manage
+              </nuxt-link>
             </div>
           </div>
         </div>
@@ -63,6 +59,9 @@ export default {
     }
   },
   methods: {
+    navigateTo(path) {
+      this.$router.push(path)
+    },
     toggleIsActive() {
       this.isActive = !this.isActive
       // this.test1()
