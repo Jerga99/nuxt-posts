@@ -20,7 +20,10 @@
           <slot></slot>
         </section>
         <footer class="modal-card-foot">
-          <button @click="emitSave" class="button is-success">Save changes</button>
+          <button
+            @click="emitModalSubmit"
+            class="button is-success">Save changes
+          </button>
           <!-- Close Modal -->
           <button @click="isActive = false" class="button">Cancel</button>
         </footer>
@@ -36,9 +39,8 @@ export default {
     }
   },
   methods: {
-    emitSave() {
-      console.log('Calling emitSave')
-      // emit 'save' event
+    emitModalSubmit() {
+      this.$emit('modalSubmitted')
     }
   }
 }

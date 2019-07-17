@@ -1,5 +1,5 @@
 <template>
-  <modal>
+  <modal @modalSubmitted="createPost">
     <template #actionButton>
       <a class="button is-danger is-block is-bold">
         <span class="compose">Create</span>
@@ -54,6 +54,11 @@ export default {
         subtitle: '',
         content: ''
       }
+    }
+  },
+  methods: {
+    createPost(someValue) {
+      console.log(this.form)
     }
   }
 }
