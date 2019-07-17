@@ -51,18 +51,10 @@ export default {
     }
   },
   fetch({store}) {
-    if (store.state.post.items.length === 0) {
-      console.log('fetching data in index page')
+    if (store.getters['post/hasEmptyItems']) {
       return store.dispatch('post/fetchPosts')
     }
   },
-  // async asyncData() {
-  //   const posts = await fetchPostsAPI()
-  //   return { posts }
-  // },
-  // mounted() {
-  //   this.$store.dispatch('post/fetchPosts')
-  // },
   computed: {
     posts() {
       return this.$store.state.post.items

@@ -17,6 +17,13 @@ export const state = () => {
   }
 }
 
+// Getters are like computed properties but for Vuex
+export const getters = {
+  hasEmptyItems(state) {
+    return state.items.length === 0
+  }
+}
+
 // Very good spot to send a request to a server. Usualy Actions resolve into some data
 export const actions = {
   fetchPosts({commit}) {

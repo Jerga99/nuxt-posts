@@ -81,8 +81,7 @@ export default {
     Navbar
   },
   fetch({store}) {
-    if (store.state.post.items.length === 0) {
-      console.log('fetching data in manage page')
+    if (store.getters['post/hasEmptyItems']) {
       return store.dispatch('post/fetchPosts')
     }
   },
