@@ -10,6 +10,7 @@
         <label class="label">Title</label>
         <div class="control">
           <input
+            v-model="form.title"
             class="input"
             type="text"
             placeholder="Awesome Title">
@@ -20,8 +21,9 @@
         <label class="label">Subtitle</label>
         <div class="control">
           <input
+            v-model="form.subtitle"
             class="input"
-            type="email"
+            type="text"
             placeholder="Awesome subtitle">
         </div>
       </div>
@@ -29,6 +31,7 @@
         <label class="label">Content</label>
         <div class="control">
           <textarea
+            v-model="form.content"
             class="textarea"
             placeholder="Awesome Content">
           </textarea>

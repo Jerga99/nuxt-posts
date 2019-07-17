@@ -50,11 +50,11 @@ export default {
       }
     }
   },
-  // fetch({store}) {
-  //   if (store.getters['post/hasEmptyItems']) {
-  //     return store.dispatch('post/fetchPosts')
-  //   }
-  // },
+  fetch({store}) {
+    if (store.getters['post/hasEmptyItems']) {
+      return store.dispatch('post/fetchPosts')
+    }
+  },
   computed: {
     posts() {
       return this.$store.state.post.items
