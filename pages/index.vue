@@ -50,11 +50,11 @@ export default {
     }
   },
   mounted() {
-    this.$store.dispatch('fetchPosts')
+    this.$store.dispatch('post/fetchPosts')
   },
   computed: {
     posts() {
-      return this.$store.state.posts
+      return this.$store.state.post.items
     }
   },
   methods: {
