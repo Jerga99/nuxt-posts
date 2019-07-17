@@ -50,13 +50,16 @@ export default {
     }
   },
   mounted() {
+    debugger
     this.$store.dispatch('fetchPosts')
       .then((posts) => {
+        debugger
         console.log(posts)
       })
   },
   computed: {
     posts() {
+      debugger
       return this.$store.state.posts
     },
     // isFormValid() {

@@ -39,8 +39,15 @@ export const state = () => {
 export const actions = {
   fetchPosts(context) {
     debugger
-    console.log('Calling Fetch posts')
+    context.commit('setPosts', INITIAL_DATA.posts)
     return INITIAL_DATA.posts
+  }
+}
+
+export const mutations = {
+  setPosts(state, posts) {
+    debugger
+    state.posts = posts
   }
 }
 
