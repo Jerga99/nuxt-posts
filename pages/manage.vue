@@ -4,40 +4,7 @@
     <div class="manage-page">
       <div class="columns mail-app">
         <aside class="column is-2 aside hero">
-          <div>
-            <div class="compose has-text-centered">
-              <modal>
-                <template #actionButton>
-                  <a class="button is-danger is-block is-bold">
-                    <span class="compose">Create</span>
-                  </a>
-                </template>
-                <form class="post-form">
-                  <div class="field">
-                    <label class="label">Title</label>
-                    <div class="control">
-                      <input class="input" type="text" placeholder="Awesome Title">
-                    </div>
-                  </div>
-
-                  <div class="field">
-                    <label class="label">Subtitle</label>
-                    <div class="control">
-                      <input class="input" type="email" placeholder="Awesome subtitle">
-                    </div>
-                  </div>
-                  <div class="field">
-                    <label class="label">Content</label>
-                    <div class="control">
-                      <textarea class="textarea" placeholder="Awesome Content"></textarea>
-                    </div>
-                  </div>
-                </form>
-              </modal>
-            </div>
-            <div class="main">
-            </div>
-          </div>
+          <post-create />
         </aside>
         <div class="column is-4 messages hero is-fullheight" id="message-feed">
           <div class="inbox-messages" id="inbox-messages">
@@ -100,11 +67,11 @@
 </template>
 <script>
 import Navbar from '~/components/Navbar'
-import Modal from '~/components/shared/Modal'
+import PostCreate from '~/components/PostCreate'
 import { mapState } from 'vuex'
 export default {
   components: {
-    Navbar, Modal
+    Navbar, PostCreate
   },
   fetch({store}) {
     if (store.getters['post/hasEmptyItems']) {
@@ -131,11 +98,6 @@ export default {
     cursor: pointer;
     background-color: #eeeeee;
   }
-
-  .post-form {
-    text-align: left;
-  }
-
 </style>
 
 
