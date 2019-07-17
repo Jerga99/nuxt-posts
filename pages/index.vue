@@ -51,7 +51,10 @@ export default {
     }
   },
   fetch({store}) {
-    return store.dispatch('post/fetchPosts')
+    if (store.state.post.items.length === 0) {
+      console.log('fetching data in index page')
+      return store.dispatch('post/fetchPosts')
+    }
   },
   // async asyncData() {
   //   const posts = await fetchPostsAPI()

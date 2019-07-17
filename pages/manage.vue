@@ -80,6 +80,12 @@ export default {
   components: {
     Navbar
   },
+  fetch({store}) {
+    if (store.state.post.items.length === 0) {
+      console.log('fetching data in manage page')
+      return store.dispatch('post/fetchPosts')
+    }
+  },
   computed: {
     ...mapState({
       posts: (state) => state.post.items
