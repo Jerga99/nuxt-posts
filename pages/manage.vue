@@ -7,6 +7,11 @@
           <div>
             <div class="compose has-text-centered">
               <modal>
+                <template #actionButton>
+                  <a class="button is-danger is-block is-bold">
+                    <span class="compose">Create</span>
+                  </a>
+                </template>
                 <form class="post-form">
                   <div class="field">
                     <label class="label">Title</label>
