@@ -12,6 +12,7 @@
             <div
               v-for="post in posts"
               :key="post._id"
+              @click="activatePost(post)"
               class="card">
               <div class="card-content">
                 <div class="msg-header">
@@ -32,7 +33,7 @@
         </div>
         <div class="column is-6 message hero is-fullheight" id="message-pane">
           <div class="box message-preview">
-            <post-manage />
+            <post-manage :postData="activePost" />
           </div>
         </div>
       </div>
@@ -63,6 +64,11 @@ export default {
   components: {
     Navbar, PostCreate, PostManage
   },
+  data() {
+    return {
+      activePost: {}
+    }
+  },
   fetch({store}) {
     if (store.getters['post/hasEmptyItems']) {
       return store.dispatch('post/fetchPosts')
@@ -72,6 +78,12 @@ export default {
     ...mapState({
       posts: (state) => state.post.items
     })
+  },
+  methods: {
+    activatePost(post) {
+      this.activePost = post
+      console.log(this.activePost)
+    }
   }
 }
 </script>
