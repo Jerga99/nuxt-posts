@@ -69,20 +69,24 @@ export default {
       activePost: {}
     }
   },
-  fetch({store}) {
-    if (store.getters['post/hasEmptyItems']) {
-      return store.dispatch('post/fetchPosts')
-    }
-  },
   computed: {
     ...mapState({
       posts: (state) => state.post.items
     })
   },
+  fetch({store}) {
+    if (store.getters['post/hasEmptyItems']) {
+      return store.dispatch('post/fetchPosts')
+    }
+  },
+  created() {
+    if (this.posts && this.posts.length > 0) {
+      this.activePost = this.posts[0]
+    }
+  },
   methods: {
     activatePost(post) {
       this.activePost = post
-      console.log(this.activePost)
     }
   }
 }

@@ -40,6 +40,11 @@ export default {
     return {
       post: {...this.postData}
     }
+  },
+  watch: {
+    postData(data) {
+      this.post = {...data}
+    }
   }
 }
 </script>
