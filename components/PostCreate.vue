@@ -58,7 +58,7 @@ export default {
   },
   methods: {
     createPost(someValue) {
-      console.log(this.form)
+      this.$store.dispatch('post/createPost', this.form)
     }
   }
 }
