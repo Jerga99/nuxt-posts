@@ -50,6 +50,7 @@ export default {
   },
   methods: {
     updatePost() {
+      debugger
       this.$store.dispatch('post/updatePost', {...this.post})
     }
   }

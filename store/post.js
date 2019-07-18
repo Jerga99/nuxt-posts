@@ -40,12 +40,13 @@ export const actions = {
     commit('addPost', postData)
   },
   updatePost({commit, state}, postData) {
-
     const index = state.items.findIndex((post) => {
       return post._id === postData._id
     })
 
-    commit('replacePost', {post: postData, index})
+    if (index !== -1) {
+      commit('replacePost', {post: postData, index})
+    }
   }
 }
 
