@@ -57,8 +57,15 @@ export default {
     }
   },
   methods: {
-    createPost(someValue) {
-      this.$store.dispatch('post/createPost', this.form)
+    createPost({closeModal, data}) {
+      this.$store.dispatch('post/createPost', {...this.form})
+      closeModal()
+      this.resetForm()
+    },
+    resetForm() {
+      this.form.title = ''
+      this.form.subtitle = ''
+      this.form.content = ''
     }
   }
 }
