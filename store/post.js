@@ -14,7 +14,8 @@ export function fetchPostsAPI() {
 
 export const state = () => {
   return {
-    items: []
+    items: [],
+    archivedItems: []
   }
 }
 
@@ -27,6 +28,17 @@ export const getters = {
 
 // Very good spot to send a request to a server. Usualy Actions resolve into some data
 export const actions = {
+  getArchivedPosts({commit}) {
+    debugger
+    const archivedPosts = localStorage.getItem('archived_posts')
+    if (archivedPosts) {
+      commit('setArchivedPosts', JSON.parse(archivedPosts))
+      return archivedPosts
+    } else {
+      localStorage.setItem('archived_posts', JSON.stringify([]))
+      return []
+    }
+  },
   fetchPosts({commit}) {
     return this.$axios.$get('/api/posts')
       .then((posts) => {
@@ -74,6 +86,9 @@ export const actions = {
 // Mutations are simple functions that have access to a state.
 // Mutations are used to assign values to a state
 export const mutations = {
+  setArchivedPosts(state, archivedPosts) {
+    state.archivedItems = archivedPosts
+  },
   setPosts(state, posts) {
     state.items = posts
   },

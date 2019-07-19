@@ -60,9 +60,16 @@ export default {
       return store.dispatch('post/fetchPosts')
     }
   },
+  mounted() {
+    this.$store.dispatch('post/getArchivedPosts')
+  },
   computed: {
     posts() {
       return this.$store.state.post.items
+    },
+    archivedPosts() {
+      debugger
+      return this.$store.state.post.archivedItems
     }
   },
   methods: {
