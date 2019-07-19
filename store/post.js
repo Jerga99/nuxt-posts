@@ -28,7 +28,7 @@ export const getters = {
 // Very good spot to send a request to a server. Usualy Actions resolve into some data
 export const actions = {
   fetchPosts({commit}) {
-    return fetchPostsAPI()
+    return this.$axios.$get('/api/posts')
       .then((posts) => {
         commit('setPosts', posts)
       })

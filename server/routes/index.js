@@ -10,7 +10,7 @@ const initialData = require(filePath)
 app.use(bodyParser.json())
 
 app.get('/posts', function(req, res) {
-  return res.json({posts: 'Just some testing data'})
+  return res.json(initialData.posts)
 })
 
 app.post('/posts', function(req, res) {
