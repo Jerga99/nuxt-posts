@@ -22,7 +22,6 @@ app.post('/posts', function(req, res) {
       return res.status(422).send(err)
     }
 
-    console.log('Sending Data to client')
     return res.json('File Sucesfully updated')
   })
 })
@@ -59,7 +58,7 @@ app.delete('/posts/:id', function(req, res) {
         return res.status(422).send(err)
       }
 
-      return res.json('File Sucesfully Updated')
+      return res.json({message: 'File Sucesfully Updated'})
     })
   } else {
     return res.status(422).send({error: 'Post cannot be updated!'})
