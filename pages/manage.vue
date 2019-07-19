@@ -34,6 +34,7 @@
         </div>
         <div class="column is-6 message hero is-fullheight" id="message-pane">
           <div class="box message-preview">
+            <button @click="deletePost" class="button is-danger delete-button">Delete</button>
             <post-manage :postData="activePost" />
           </div>
         </div>
@@ -88,6 +89,11 @@ export default {
   methods: {
     activatePost(post) {
       this.activePost = post
+    },
+    deletePost() {
+      if (this.activePost) {
+        this.$store.dispatch('post/deletePost', this.activePost._id)
+      }
     }
   }
 }
@@ -108,6 +114,13 @@ export default {
       cursor: pointer;
       background-color: #eeeeee;
     }
+  }
+
+  .delete-button {
+    display: block;
+    width: 100px;
+    margin-left: auto;
+    margin-right: 0;
   }
 </style>
 

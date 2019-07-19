@@ -57,6 +57,19 @@ export const actions = {
           return postData
         })
     }
+  },
+  deletePost({commit, state}, postId) {
+    const index = state.items.findIndex((post) => {
+      return post._id === postId
+    })
+
+    if (index !== -1) {
+      return this.$axios.$delete(`/api/posts/${postId}`)
+        .then((res) => {
+          commit('deletePost', index)
+          return postId
+        })
+    }
   }
 }
 
@@ -71,6 +84,9 @@ export const mutations = {
   },
   replacePost(state, {post, index}) {
     Vue.set(state.items, index, post)
+  },
+  deletePost(state, postIndex) {
+    state.items.splice(postIndex, 1)
   }
 }
 
