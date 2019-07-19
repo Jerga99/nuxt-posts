@@ -2,24 +2,24 @@
   "posts": [
     {
       "_id": 1,
-      "title": "My First Post",
-      "subtitle": "My First Subtitle",
+      "title": "My First Post UPDATED!",
+      "subtitle": "My First Subtitle UPDATED!",
       "createdAt": 1563537359266,
       "isRead": false,
       "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum"
     },
     {
       "_id": 2,
-      "title": "My Second Post",
-      "subtitle": "My Second Subtitle",
+      "title": "CHANGED DATA",
+      "subtitle": "CHANGED DATA",
       "createdAt": 1563537359266,
       "isRead": true,
-      "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum"
+      "content": "CHANGED DATA"
     },
     {
-      "title": "sdadas asd ads as d",
-      "subtitle": "asd asd2weasdasd",
-      "content": " sad ads as as as dasd sad asdsad",
+      "title": "CHANGED DATA 2",
+      "subtitle": "CHANGED DATA 2",
+      "content": "CHANGED DATA 2",
       "_id": "xh8wqpi",
       "createdAt": 1563540489310
     },

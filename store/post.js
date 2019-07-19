@@ -41,6 +41,7 @@ export const actions = {
       .then((res) => {
         console.log(res)
         commit('addPost', postData)
+        return postData
       })
   },
   updatePost({commit, state}, postData) {
@@ -49,7 +50,12 @@ export const actions = {
     })
 
     if (index !== -1) {
-      commit('replacePost', {post: postData, index})
+      return this.$axios.$patch(`/api/posts/${postData._id}`, postData)
+        .then((res) => {
+          console.log(res)
+          commit('replacePost', {post: postData, index})
+          return postData
+        })
     }
   }
 }
