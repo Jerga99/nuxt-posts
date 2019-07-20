@@ -1,14 +1,13 @@
 
 
 
-
 <template>
   <div class="post">
     <div class="post-content">
-      <a class="post-header post-header-link clickable">
+      <nuxt-link :to="`/posts/${id}`" class="post-header post-header-link clickable">
         <h4 class="title is-4">{{title}}</h4>
         <h5 class="subtitle is-5">{{subtitle}}</h5>
-      </a>
+      </nuxt-link>
       <div class="post-footer">
         by Filip Jerga, {{date | formatDate}}
       </div>
