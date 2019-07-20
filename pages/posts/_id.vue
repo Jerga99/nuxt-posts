@@ -11,11 +11,11 @@
                   <hr>
                 </div>
                 <div class="post-content">
-                  <h1 class="title">Some Title</h1>
-                  <h2 class="subtitle">Some Subtitle</h2>
+                  <h1 class="title">{{post.title}}</h1>
+                  <h2 class="subtitle">{{post.subtitle}}</h2>
                   <div class="markdown">
                     <!-- Post Markdown content -->
-                    <div></div>
+                    <div v-html="compiledMarkdown"></div>
                   </div>
                 </div>
               </div>
@@ -30,9 +30,20 @@
 </template>
 <script>
 export default {
-  fetch({params}) {
-    const id = params.id
-    console.log(id)
+  computed: {
+    post() {
+      return this.$store.state.post.item
+    },
+    compiledMarkdown() {
+      if (process.client) {
+        return marked(this.post.content, {sanitize: true})
+      }
+
+      return ''
+    }
+  },
+  fetch({params, store}) {
+    return store.dispatch('post/fetchPostById', params.id)
   }
 }
 </script>
